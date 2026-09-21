@@ -12,15 +12,17 @@ def _():
 
 @app.function
 def fibonacci(n: int) -> int:
-    """Return the n-th Fibonacci number."""
-    if n == 0:
-        return 0
-    if n == 1:
-        return 1
+    """Return the n-th Fibonacci number.
+
+    F(0) = 0, F(1) = 1, F(n) = F(n-1) + F(n-2) for n >= 2.
+    Uses an iterative approach in O(n) time and O(1) space.
+    """
+    if n < 0:
+        raise ValueError("fibonacci is not defined for negative n")
     a, b = 0, 1
-    for _ in range(n - 1):
+    for _ in range(n):
         a, b = b, a + b
-    return b
+    return a
 
 
 @app.cell
