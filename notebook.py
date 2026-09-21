@@ -11,12 +11,31 @@ def _():
     return
 
 
+@app.cell(hide_code=True)
+def _():
+    return
+
+
 @app.function
-def fibonacci_iteratif(n):
-    a, b = 0, 1
-    for _ in range(n):
-        print(a, end=" ")
-        a, b = b, a + b
+def fibonacci(n: int) -> int:
+    """Return the n-th Fibonacci number."""
+    pass
+
+
+@app.cell
+def _():
+    def test_fibonacci_base_cases():
+        assert fibonacci(0) == 0
+        assert fibonacci(1) == 1
+
+    def test_fibonacci_small_values():
+        assert fibonacci(2) == 1
+        assert fibonacci(5) == 5
+
+    def test_fibonacci_larger_value():
+        assert fibonacci(10) == 55
+
+    return
 
 
 if __name__ == "__main__":
