@@ -8,3 +8,8 @@ wheels/
 
 # Virtual environments
 .venv
+
+# marimo and Python artifacts
+__marimo__/
+*.html
+dist/
