@@ -13,3 +13,4 @@ wheels/
 __marimo__/
 *.html
 dist/
+FETCH_HEAD
